@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --nav-height: 5rem;
+        --nav-gap: 2rem;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      input {
+        display: none;
+      }
+
+      nav {
+        height: var(--nav-height);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: var(--nav-gap);
+        overflow: hidden;
+        position: relative;
+        background: rgba(20, 50, 50, 0.8);
+      }
+
+      input:checked + nav {
+        height: 100vh;
+        overflow: auto;
+      }
+
+      .logo {
+        background: rgba(255, 100, 0, 0.8);
+        height: var(--nav-height);
+      }
+
+      label {
+        user-select: none;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        background: rgb(0 149 12);
+        height: var(--nav-height);
+      }
+
+      input:checked ~ nav > label {
+        background: yellow;
+      }
+
+      div {
+        background: rgba(0, 0, 255, 1);
+        display: flex;
+        gap: var(--nav-gap);
+        flex-wrap: nowrap;
+        overflow: hidden;
+        z-index: 2;
+        position: relative;
+      }
+
+      input:checked ~ nav > div {
+        flex-direction: column;
+        width: 100vw;
+        margin-bottom: auto;
+      }
+
+      a {
+        white-space: nowrap;
+        background: rgb(255 180 0);
+        padding: 0 25px;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="hamburger" type="checkbox" />
+    <nav>
+      <a class="logo">Logo</a>
+      <label for="hamburger">Hamburger</label>
+      <div>
+        <a>Link</a>
+        <a>Link</a>
+        <a>Link</a>
+        <a>Link</a>
+      </div>
+    </nav>
+  </body>
+</html>
