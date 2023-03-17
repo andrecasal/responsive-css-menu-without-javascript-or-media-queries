@@ -36,6 +36,7 @@
 			.logo {
 				background: rgba(255, 100, 0, 0.8);
 				height: var(--nav-height);
+				flex: 1;
 			}
 
 			label {
@@ -70,9 +71,9 @@
 				overflow: auto;
 				display: grid;
 				grid-template-areas:
-					'logo . hamburger'
-					'nav nav nav';
-				grid-template-columns: minmax(min-content, auto) 1fr minmax(min-content, auto);
+					'logo hamburger'
+					'nav nav';
+				grid-template-columns: 1fr auto;
 				grid-template-rows: auto 1fr;
 				gap: 0;
 			}
@@ -83,6 +84,7 @@
 
 			input:checked ~ nav > label {
 				grid-area: hamburger;
+				position: static;
 				background: yellow;
 			}
 
@@ -93,7 +95,7 @@
 		</style>
 	</head>
 	<body>
-		<input id="hamburger" type="checkbox" />
+		<input id="hamburger" type="checkbox" checked />
 		<nav>
 			<a class="logo">Logo</a>
 			<label for="hamburger">Hamburger</label>
