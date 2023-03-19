@@ -18,6 +18,7 @@ This repository contains a simple HTML and CSS implementation of a responsive na
 ## Drawbacks
 
 - Menu needs a fixed height
+- Clicking the logo either doesn't close the menu if it's opened or turning the logo into a label always toggles the menu (opening it if it's closed)
 
 ## Usage
 
